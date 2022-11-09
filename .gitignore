@@ -1,0 +1,11 @@
+[Ll]ibrary
+[Ll]ogs
+[Tt]emp
+[Uu]serSettings
+[Oo]bj
+
+/.DS_Store
+/.vsconfig
+/.vs
+/*.sln
+/*.csproj
