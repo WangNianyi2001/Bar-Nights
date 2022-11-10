@@ -1,20 +1,47 @@
 using UnityEngine;
 
 public class Bottle : MonoBehaviour {
+	#region Inspector fields
 	public ParticleSystem particle;
-
-	#region Public interfaces
-
-#pragma warning disable CS0618
-	public bool Pouring {
-		get => particle.enableEmission;
-		set => particle.enableEmission = value;
-	}
-#pragma warning restore CS0618
+	public Color color;
 	#endregion
 
-	void Start() {
-		Pouring = false;
-		particle.trigger.AddCollider(Shaker.instance.enteringPlane);
+	#region Core fields
+	Vector3 anchor;
+	#endregion
+
+	#region Public interfaces
+	public bool Using {
+		get => particle.emission.enabled;
+		set {
+			particle.enableEmission = value;
+			if(value) {
+				transform.rotation = Quaternion.Euler(0, 0, BartendingManager.instance.bottleAngle);
+			}
+			else {
+				transform.position = anchor;
+				transform.rotation = Quaternion.identity;
+			}
+		}
 	}
+
+	public void Interact() {
+		Using = !Using;
+	}
+	#endregion
+
+	#region Life cycle
+	void Start() {
+		anchor = transform.position;
+		Using = false;
+		particle.startColor = color;
+		particle.trigger.AddCollider(BartendingManager.instance.shaker.enteringPlane);
+	}
+
+	void Update() {
+		if(Using) {
+			transform.position = BartendingManager.instance.PointingPosition;
+		}
+	}
+	#endregion
 }

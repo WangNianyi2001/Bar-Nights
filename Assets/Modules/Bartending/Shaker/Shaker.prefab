@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enteringPlane: {fileID: 6997325663229602521}
+  volume: 100
   liquidAmount: 0
 --- !u!1 &1816574358993592007
 GameObject:

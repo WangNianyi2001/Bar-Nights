@@ -1,22 +1,16 @@
 using UnityEngine;
 
 public class Shaker : MonoBehaviour {
-	#region Singleton
-	public static Shaker instance;
-	public Shaker() {
-		instance = this;
-	}
-	#endregion
-
-	#region Inspector Fields
+	#region Inspector fields
 	public Collider enteringPlane;
+	public float volume;
 	#endregion
 
-	#region Core Fields
+	#region Core fields
 	public float liquidAmount = 0;
 	#endregion
 
-	public void OnReceivingLiquid(Bottle bottle) {
-		liquidAmount += 0.1f;
+	public void OnReceivingLiquid(Bottle bottle, int exittingParticleCount) {
+		liquidAmount += exittingParticleCount * 0.1f;
 	}
 }

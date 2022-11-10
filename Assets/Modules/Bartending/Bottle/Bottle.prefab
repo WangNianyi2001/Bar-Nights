@@ -4838,6 +4838,7 @@ GameObject:
   - component: {fileID: 5158486482700702442}
   - component: {fileID: 5158486482700702443}
   - component: {fileID: 4165833011850517921}
+  - component: {fileID: 7092592792529510510}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -4924,6 +4925,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7092592792529510510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5158486482700702422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127a5532d55e2964ba377bc9d27e8e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeselect:
+    m_PersistentCalls:
+      m_Calls: []
+  onUse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5781483240608536017}
+        m_TargetAssemblyTypeName: Bottle, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &5158486483289168597
 GameObject:
   m_ObjectHideFlags: 0
@@ -4971,3 +5005,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 7051702895992269171}
+  color: {r: 1, g: 1, b: 1, a: 1}
