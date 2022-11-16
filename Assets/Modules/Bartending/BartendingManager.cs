@@ -2,19 +2,11 @@ using UnityEngine;
 
 namespace Game {
 	public class BartendingManager : MonoBehaviour {
-		#region Singleton
-		public static BartendingManager instance;
-		public BartendingManager() {
-			instance = this;
-		}
-		#endregion
-
 		#region Inspector fields
 		public Shaker shaker;
 		new public Camera camera;
 		public Collider bartendingPlane;
 		public RectTransform mixPivot;
-		public float liquidReceivingRate;
 
 		public float bottleAngle;
 		#endregion

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 namespace Game {
+#pragma warning disable CS0618
 	public class Bottle : MonoBehaviour {
 		#region Inspector fields
 		public Alcohol alcohol;
@@ -17,7 +18,7 @@ namespace Game {
 			set {
 				particle.enableEmission = value;
 				if(value) {
-					transform.rotation = Quaternion.Euler(0, 0, BartendingManager.instance.bottleAngle);
+					transform.rotation = Quaternion.Euler(0, 0, GameManager.instance.bartending.bottleAngle);
 				}
 				else {
 					transform.position = anchor;
@@ -36,14 +37,15 @@ namespace Game {
 			anchor = transform.position;
 			Using = false;
 			particle.startColor = alcohol.color;
-			particle.trigger.AddCollider(BartendingManager.instance.shaker.enteringPlane);
+			particle.trigger.AddCollider(GameManager.instance.bartending.shaker.enteringPlane);
 		}
 
 		void Update() {
 			if(Using) {
-				transform.position = BartendingManager.instance.PointingPosition;
+				transform.position = GameManager.instance.bartending.PointingPosition;
 			}
 		}
 		#endregion
 	}
+#pragma warning restore CS0618
 }

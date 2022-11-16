@@ -4,6 +4,7 @@ namespace Game {
 	public class Shaker : MonoBehaviour {
 		#region Inspector fields
 		public Collider enteringPlane;
+		public float liquidReceivingRate;
 		#endregion
 
 		#region Core fields
@@ -17,14 +18,14 @@ namespace Game {
 				mix = value;
 				if(mix.magnitude > 1)
 					mix = mix.normalized;
-				RectTransform mixPivot = BartendingManager.instance.mixPivot;
+				RectTransform mixPivot = GameManager.instance.bartending.mixPivot;
 				mixPivot.anchoredPosition = mix * (mixPivot.parent as RectTransform).sizeDelta / 2;
 			}
 		}
 		#endregion
 
 		public void ReceiveLiquid(Bottle bottle) {
-			Mix += bottle.alcohol.vector * BartendingManager.instance.liquidReceivingRate;
+			Mix += bottle.alcohol.vector * liquidReceivingRate;
 		}
 	}
 }
