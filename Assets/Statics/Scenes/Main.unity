@@ -732,8 +732,8 @@ MonoBehaviour:
     outOfRange: {fileID: 0}
     width: 64
     height: 64
-  useKey: 32
-  useButton: Fire
+  useKey: 0
+  useButton: Use
   defaultUseMessage: '- Click to interact -'
   broadcastToChildren: 1
   actorTransform: {fileID: 0}
@@ -1538,6 +1538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 290720122}
   start: 2
+  actions: {fileID: -944628639613478452, guid: 4053f059245b3f04bbe041982669c531, type: 3}
 --- !u!4 &910437940
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,6 +2009,10 @@ PrefabInstance:
     - target: {fileID: 4610469307453942871, guid: 199a5b637c0bc00499d9ccc04a963b36, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610469307466210210, guid: 199a5b637c0bc00499d9ccc04a963b36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.00003
       objectReference: {fileID: 0}
     - target: {fileID: 4610469307556005296, guid: 199a5b637c0bc00499d9ccc04a963b36, type: 3}
       propertyPath: m_AnchorMax.y
