@@ -19,11 +19,7 @@ namespace Game {
 		#endregion
 
 		#region Core 
-		Status _status;
-		public Status status {
-			get => _status;
-			set => SwitchTo(value);
-		}
+		Status status;
 		[NonSerialized] public ViewManager view;
 		[NonSerialized] public BartendingManager bartending;
 		[NonSerialized] public DialogueSystemController dialogue;
@@ -31,40 +27,26 @@ namespace Game {
 		#endregion
 
 		#region Public interfaces
-		public void DisableAll() {
-			view.Deactivate();
-			ui.Deactivate();
-			bartending.Active = false;
-		}
-
-		public void SwitchToDialogue() {
-			if(status == Status.Bartending)
-				bartending.Active = false;
-			view.SwitchTo(view.dialogue);
-			ui.SwitchTo(ui.dialogue);
-		}
-
-		public void SwitchToBartending() {
-			view.SwitchTo(view.bartending);
-			ui.SwitchTo(ui.bartending);
-			bartending.Active = true;
-		}
-
-		public void SwitchTo(Status status) {
-			if(_status == status)
+		public void SwitchTo(Status value) {
+			if(status == value)
 				return;
-			switch(status) {
+			bartending.Active = false;
+			switch(value) {
 				case Status.None:
-					DisableAll();
+					view.Deactivate();
+					ui.Deactivate();
 					break;
 				case Status.Dialogue:
-					SwitchToDialogue();
+					view.SwitchTo(view.dialogue);
+					ui.SwitchTo(ui.dialogue);
 					break;
 				case Status.Bartending:
-					SwitchToBartending();
+					view.SwitchTo(view.bartending);
+					ui.SwitchTo(ui.bartending);
+					bartending.Active = true;
 					break;
 			}
-			_status = status;
+			status = value;
 		}
 		#endregion
 
@@ -77,7 +59,7 @@ namespace Game {
 		}
 
 		void Start() {
-			status = start;
+			SwitchTo(start);
 		}
 		#endregion
 	}
