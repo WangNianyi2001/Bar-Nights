@@ -1,6 +1,6 @@
+using UnityEngine;
 using Cinemachine;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class ViewManager : MonoBehaviour {
 	public CinemachineVirtualCamera entering, customerArea, dialogue, bartending;

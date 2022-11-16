@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4610469305973861483}
   - component: {fileID: 4610469305973861482}
   m_Layer: 5
-  m_Name: Scrolling Dialogue UI
+  m_Name: Dialogue UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
