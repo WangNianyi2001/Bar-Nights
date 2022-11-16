@@ -9,15 +9,11 @@ namespace Game {
 
 		public void Deactivate() {
 			foreach(var view in views)
-				view.gameObject.SetActive(false);
+				view?.gameObject?.SetActive(false);
 		}
 		public void SwitchTo(RectTransform view) {
 			Deactivate();
-			view.gameObject.SetActive(true);
-		}
-
-		void Start() {
-			Deactivate();
+			view?.gameObject?.SetActive(true);
 		}
 	}
 }

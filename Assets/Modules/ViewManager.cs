@@ -8,15 +8,14 @@ public class ViewManager : MonoBehaviour {
 		new CinemachineVirtualCamera[] { entering, customerArea, dialogue, bartending };
 
 	public void Deactivate() {
-		foreach(var view in views)
-			view.enabled = false;
+		foreach(var view in views) {
+			if(view)
+				view.enabled = false;
+		}
 	}
 	public void SwitchTo(CinemachineVirtualCamera view) {
 		Deactivate();
-		view.enabled = true;
-	}
-
-	void Start() {
-		Deactivate();
+		if(view)
+			view.enabled = true;
 	}
 }
