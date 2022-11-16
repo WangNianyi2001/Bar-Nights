@@ -9,7 +9,7 @@ namespace Game {
 			var particles = new List<ParticleSystem.Particle>();
 			bottle.particle.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, particles);
 			if(particles.Count > 0)
-				BartendingManager.instance.shaker.ReceiveLiquid(bottle);
+				GameManager.instance.bartending.shaker.ReceiveLiquid(bottle);
 		}
 	}
 }

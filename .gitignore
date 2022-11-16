@@ -4,6 +4,8 @@
 [Uu]serSettings
 [Oo]bj
 
+[Aa]ssets/**/**[Bb]ackup**
+
 /.DS_Store
 /.vsconfig
 /.vs
