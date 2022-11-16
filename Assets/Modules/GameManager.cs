@@ -29,23 +29,35 @@ namespace Game {
 		#endregion
 
 		#region Public interfaces
+		public void DeactivateAll() {
+			view.Deactivate();
+			ui.Deactivate();
+		}
+
+		public void SwitchToDialogue() {
+			view.SwitchTo(view.dialogue);
+			ui.SwitchTo(ui.dialogue);
+		}
+
+		public void SwitchToBartending() {
+			view.SwitchTo(view.bartending);
+			ui.SwitchTo(ui.bartending);
+			bartending.Active = true;
+		}
+
 		public void SwitchTo(State value) {
 			if(state == value)
 				return;
 			bartending.Active = false;
 			switch(value) {
 				case State.None:
-					view.Deactivate();
-					ui.Deactivate();
+					DeactivateAll();
 					break;
 				case State.Dialogue:
-					view.SwitchTo(view.dialogue);
-					ui.SwitchTo(ui.dialogue);
+					SwitchToDialogue();
 					break;
 				case State.Bartending:
-					view.SwitchTo(view.bartending);
-					ui.SwitchTo(ui.bartending);
-					bartending.Active = true;
+					SwitchToBartending();
 					break;
 			}
 			state = value;

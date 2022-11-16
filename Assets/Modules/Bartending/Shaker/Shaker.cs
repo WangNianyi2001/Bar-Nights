@@ -22,10 +22,15 @@ namespace Game {
 				mixPivot.anchoredPosition = mix * (mixPivot.parent as RectTransform).sizeDelta / 2;
 			}
 		}
-		#endregion
 
 		public void ReceiveLiquid(Bottle bottle) {
 			Mix += bottle.alcohol.vector * liquidReceivingRate;
 		}
+
+		public void Serve() {
+			//TODO
+			GameManager.instance.SwitchTo(GameManager.State.Dialogue);
+		}
+		#endregion
 	}
 }
