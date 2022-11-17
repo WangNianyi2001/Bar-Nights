@@ -35,8 +35,10 @@ namespace Game {
 			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
 			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
 
+			DialogueSystemController dialogue = GameManager.instance.dialogue;
+			dialogue.StopAllConversations();
 			string conversationName = DialogueLua.GetVariable("Current Conversation").asString;
-			GameManager.instance.dialogue.StartConversation(conversationName);
+			dialogue.StartConversation(conversationName);
 		}
 		#endregion
 	}
