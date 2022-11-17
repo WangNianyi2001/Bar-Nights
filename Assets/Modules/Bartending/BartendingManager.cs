@@ -30,6 +30,7 @@ namespace Game {
 			set {
 				foreach(var bottle in Bottle.all)
 					bottle.usable.enabled = value;
+				shaker.usable.enabled = value;
 			}
 		}
 		#endregion

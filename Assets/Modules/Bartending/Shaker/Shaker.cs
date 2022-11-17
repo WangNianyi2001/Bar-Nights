@@ -1,8 +1,10 @@
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 namespace Game {
 	public class Shaker : MonoBehaviour {
 		#region Inspector fields
+		public Usable usable;
 		public Collider enteringPlane;
 		public float liquidReceivingRate;
 		#endregion
@@ -29,7 +31,7 @@ namespace Game {
 
 		public void Serve() {
 			//TODO
-			GameManager.instance.SwitchTo(GameManager.State.Dialogue);
+			GameManager.instance.SwitchToDialogue();
 		}
 		#endregion
 	}

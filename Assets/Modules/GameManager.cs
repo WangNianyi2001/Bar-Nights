@@ -30,19 +30,15 @@ namespace Game {
 
 		#region Public interfaces
 		public void DeactivateAll() {
-			view.Deactivate();
-			ui.Deactivate();
+			SwitchTo(State.None);
 		}
 
 		public void SwitchToDialogue() {
-			view.SwitchTo(view.dialogue);
-			ui.SwitchTo(ui.dialogue);
+			SwitchTo(State.Dialogue);
 		}
 
 		public void SwitchToBartending() {
-			view.SwitchTo(view.bartending);
-			ui.SwitchTo(ui.bartending);
-			bartending.Active = true;
+			SwitchTo(State.Bartending);
 		}
 
 		public void SwitchTo(State value) {
@@ -51,13 +47,17 @@ namespace Game {
 			bartending.Active = false;
 			switch(value) {
 				case State.None:
-					DeactivateAll();
+					view.Deactivate();
+					ui.Deactivate();
 					break;
 				case State.Dialogue:
-					SwitchToDialogue();
+					view.SwitchTo(view.dialogue);
+					ui.SwitchTo(ui.dialogue);
 					break;
 				case State.Bartending:
-					SwitchToBartending();
+					view.SwitchTo(view.bartending);
+					ui.SwitchTo(ui.bartending);
+					bartending.Active = true;
 					break;
 			}
 			state = value;
