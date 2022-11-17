@@ -30,8 +30,13 @@ namespace Game {
 		}
 
 		public void Serve() {
-			//TODO
 			GameManager.instance.SwitchToDialogue();
+
+			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
+			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
+
+			string conversationName = DialogueLua.GetVariable("Current Conversation").asString;
+			GameManager.instance.dialogue.StartConversation(conversationName);
 		}
 		#endregion
 	}

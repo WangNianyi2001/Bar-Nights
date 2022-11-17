@@ -41,6 +41,11 @@ namespace Game {
 			SwitchTo(State.Bartending);
 		}
 
+		public void SwitchToBartendingFromConversation() {
+			dialogue.StopAllConversations();
+			SwitchToBartending();
+		}
+
 		public void SwitchTo(State value) {
 			if(state == value)
 				return;
