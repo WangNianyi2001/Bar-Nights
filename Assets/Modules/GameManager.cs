@@ -13,9 +13,10 @@ namespace Game {
 		}
 		#endregion
 
+		public enum State { None, Dialogue, Bartending, Customer, Entering }
+
 		#region Inspector fields
 		new public Camera camera;
-		public enum State { None, Dialogue, Bartending, Customer, Entering }
 		public State start = State.None;
 		public InputActionAsset actions;
 		#endregion
@@ -29,35 +30,35 @@ namespace Game {
 		#endregion
 
 		#region Public interfaces
-		public void DeactivateAll() {
-			view.Deactivate();
-			ui.Deactivate();
-		}
-
-		public void SwitchToDialogue() {
-			view.SwitchTo(view.dialogue);
-			ui.SwitchTo(ui.dialogue);
-		}
-
-		public void SwitchToBartending() {
-			view.SwitchTo(view.bartending);
-			ui.SwitchTo(ui.bartending);
-			bartending.Active = true;
-		}
+		public void DeactivateAll() => SwitchTo(State.None);
+		public void SwitchToDialogue() => SwitchTo(State.Dialogue);
+		public void SwitchToBartending() => SwitchTo(State.Bartending);
+		public void SwitchToCustomer() => SwitchTo(State.Customer);
+		public void SwitchToEntering() => SwitchTo(State.Entering);
 
 		public void SwitchTo(State value) {
 			if(state == value)
 				return;
+			ui.Deactivate();
 			bartending.Active = false;
 			switch(value) {
 				case State.None:
-					DeactivateAll();
+					view.Deactivate();
 					break;
 				case State.Dialogue:
-					SwitchToDialogue();
+					view.SwitchTo(view.dialogue);
+					ui.SwitchTo(ui.dialogue);
 					break;
 				case State.Bartending:
-					SwitchToBartending();
+					view.SwitchTo(view.bartending);
+					ui.SwitchTo(ui.bartending);
+					bartending.Active = true;
+					break;
+				case State.Customer:
+					view.SwitchTo(view.customerArea);
+					break;
+				case State.Entering:
+					view.SwitchTo(view.entering);
 					break;
 			}
 			state = value;

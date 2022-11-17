@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb57debc8f8d0a48a43980e61dcea5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usable: {fileID: 4108275118649667386}
   enteringPlane: {fileID: 6997325663229602521}
   liquidReceivingRate: 0.01
 --- !u!1 &1816574358993592007

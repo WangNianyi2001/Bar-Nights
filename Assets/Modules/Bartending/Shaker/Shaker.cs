@@ -1,8 +1,10 @@
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 namespace Game {
 	public class Shaker : MonoBehaviour {
 		#region Inspector fields
+		public Usable usable;
 		public Collider enteringPlane;
 		public float liquidReceivingRate;
 		#endregion
@@ -28,8 +30,15 @@ namespace Game {
 		}
 
 		public void Serve() {
-			//TODO
-			GameManager.instance.SwitchTo(GameManager.State.Dialogue);
+			GameManager.instance.SwitchToDialogue();
+
+			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
+			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
+
+			DialogueSystemController dialogue = GameManager.instance.dialogue;
+			dialogue.StopAllConversations();
+			string conversationName = DialogueLua.GetVariable("Current Conversation").asString;
+			dialogue.StartConversation(conversationName);
 		}
 		#endregion
 	}
