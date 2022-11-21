@@ -1,10 +1,18 @@
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
+using System.Collections.Generic;
 
 namespace Game {
+#pragma warning disable CS0618
 	public class Bottle : MonoBehaviour {
+		#region Static
+		public static List<Bottle> all = new List<Bottle>();
+		#endregion
+
 		#region Inspector fields
 		public Alcohol alcohol;
 		public ParticleSystem particle;
+		public Usable usable;
 		#endregion
 
 		#region Core fields
@@ -17,7 +25,7 @@ namespace Game {
 			set {
 				particle.enableEmission = value;
 				if(value) {
-					transform.rotation = Quaternion.Euler(0, 0, BartendingManager.instance.bottleAngle);
+					transform.rotation = Quaternion.Euler(0, 0, GameManager.instance.bartending.bottleAngle);
 				}
 				else {
 					transform.position = anchor;
@@ -33,17 +41,25 @@ namespace Game {
 
 		#region Life cycle
 		void Start() {
+			all.Add(this);
+
 			anchor = transform.position;
 			Using = false;
 			particle.startColor = alcohol.color;
-			particle.trigger.AddCollider(BartendingManager.instance.shaker.enteringPlane);
+			particle.trigger.AddCollider(GameManager.instance.bartending.shaker.enteringPlane);
+			usable.name = alcohol.name;
 		}
 
 		void Update() {
 			if(Using) {
-				transform.position = BartendingManager.instance.PointingPosition;
+				transform.position = GameManager.instance.bartending.PointingPosition;
 			}
+		}
+
+		void OnDestroy() {
+			all.Remove(this);
 		}
 		#endregion
 	}
+#pragma warning restore CS0618
 }
