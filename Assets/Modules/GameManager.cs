@@ -13,16 +13,12 @@ namespace Game {
 		}
 		#endregion
 
-		public enum State { None, Dialogue, Bartending, Customer, Entering }
-
 		#region Inspector fields
 		new public Camera camera;
-		public State start = State.None;
 		public InputActionAsset actions;
 		#endregion
 
-		#region Core 
-		State state;
+		#region Core fields
 		[NonSerialized] public ViewManager view;
 		[NonSerialized] public BartendingManager bartending;
 		[NonSerialized] public DialogueSystemController dialogue;
@@ -30,39 +26,61 @@ namespace Game {
 		#endregion
 
 		#region Public interfaces
-		public void DeactivateAll() => SwitchTo(State.None);
-		public void SwitchToDialogue() => SwitchTo(State.Dialogue);
-		public void SwitchToBartending() => SwitchTo(State.Bartending);
-		public void SwitchToCustomer() => SwitchTo(State.Customer);
-		public void SwitchToEntering() => SwitchTo(State.Entering);
-
-		public void SwitchTo(State value) {
-			if(state == value)
-				return;
-			ui.Deactivate();
+		#region State management
+		public void DeactivateAll() {
 			bartending.Active = false;
-			switch(value) {
-				case State.None:
-					view.Deactivate();
-					break;
-				case State.Dialogue:
-					view.SwitchTo(view.dialogue);
-					ui.SwitchTo(ui.dialogue);
-					break;
-				case State.Bartending:
-					view.SwitchTo(view.bartending);
-					ui.SwitchTo(ui.bartending);
-					bartending.Active = true;
-					break;
-				case State.Customer:
-					view.SwitchTo(view.customerArea);
-					break;
-				case State.Entering:
-					view.SwitchTo(view.entering);
-					break;
-			}
-			state = value;
+			Customer.AllEnabled = false;
+			ui.Deactivate();
+			view.Deactivate();
 		}
+		public void SwitchToDialogue() {
+			DeactivateAll();
+			view.SwitchTo(view.dialogue);
+			ui.SwitchTo(ui.dialogue);
+			Customer.AllEnabled = true;
+		}
+		public void SwitchToBartending() {
+			DeactivateAll();
+			view.SwitchTo(view.bartending);
+			ui.SwitchTo(ui.bartending);
+			bartending.Active = true;
+		}
+		public void SwitchToCustomer() {
+			DeactivateAll();
+			view.SwitchTo(view.customerArea);
+		}
+		public void SwitchToEntering() {
+			DeactivateAll();
+			view.SwitchTo(view.entering);
+		}
+		#endregion
+		#region In-dialogue bartending
+		public void StartBartendingFromDialogue() {
+			dialogue.StopAllConversations();
+			SwitchToBartending();
+		}
+		public void ServeBartendedAlchohol() {
+			SwitchToDialogue();
+
+			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
+			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
+
+			string name = DialogueLua.GetVariable("Current Dialogue").asString;
+			dialogue.StartConversation(name);
+		}
+		#endregion
+		#region Dialogue management
+		public void StartDialogue(string name) {
+			dialogue.StopAllConversations();
+			SwitchToDialogue();
+			dialogue.StartConversation(name);
+		}
+		public void EndDialogue() {
+			dialogue.StopAllConversations();
+			DialogueLua.SetVariable("Bartending Count", 0);
+			DialogueLua.SetVariable("Current Dialogue", "");
+		}
+		#endregion
 		#endregion
 
 		#region Life cycle
@@ -75,7 +93,7 @@ namespace Game {
 
 		void Start() {
 			InputDeviceManager.RegisterInputAction("Use", actions.FindAction("Use"));
-			SwitchTo(start);
+			DeactivateAll();
 		}
 		#endregion
 	}

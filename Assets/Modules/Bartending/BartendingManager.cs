@@ -10,7 +10,7 @@ namespace Game {
 		public float bottleAngle;
 		#endregion
 
-		#region
+		#region Core fields
 		Vector3 lastPointingPosition = Vector3.zero;
 		#endregion
 
