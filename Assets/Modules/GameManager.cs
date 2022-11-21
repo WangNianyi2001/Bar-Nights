@@ -23,13 +23,14 @@ namespace Game {
 		[NonSerialized] public BartendingManager bartending;
 		[NonSerialized] public DialogueSystemController dialogue;
 		[NonSerialized] public UIManager ui;
+		CustomerBehaviour currentCustomer;
 		#endregion
 
 		#region Public interfaces
 		#region State management
 		public void DeactivateAll() {
 			bartending.Active = false;
-			Customer.AllEnabled = false;
+			CustomerBehaviour.AllEnabled = false;
 			ui.Deactivate();
 			view.Deactivate();
 		}
@@ -37,7 +38,7 @@ namespace Game {
 			DeactivateAll();
 			view.SwitchTo(view.dialogue);
 			ui.SwitchTo(ui.dialogue);
-			Customer.AllEnabled = true;
+			CustomerBehaviour.AllEnabled = true;
 		}
 		public void SwitchToBartending() {
 			DeactivateAll();
@@ -54,6 +55,7 @@ namespace Game {
 			view.SwitchTo(view.entering);
 		}
 		#endregion
+
 		#region In-dialogue bartending
 		public void StartBartendingFromDialogue() {
 			dialogue.StopAllConversations();
@@ -69,7 +71,14 @@ namespace Game {
 			dialogue.StartConversation(name);
 		}
 		#endregion
+
 		#region Dialogue management
+		public CustomerBehaviour CurrentCustomer {
+			get => currentCustomer;
+			set {
+				currentCustomer = value;
+			}
+		}
 		public void StartDialogue(string name) {
 			dialogue.StopAllConversations();
 			SwitchToDialogue();
@@ -77,8 +86,12 @@ namespace Game {
 		}
 		public void EndDialogue() {
 			dialogue.StopAllConversations();
+			CurrentCustomer = null;
 			DialogueLua.SetVariable("Bartending Count", 0);
 			DialogueLua.SetVariable("Current Dialogue", "");
+		}
+		public void SetCurrentCustomerAppearance(Sprite sprite) {
+			CurrentCustomer?.SetAppearance(sprite);
 		}
 		#endregion
 		#endregion
