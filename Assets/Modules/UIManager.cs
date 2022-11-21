@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Game {
 	public class UIManager : MonoBehaviour {
+		public Canvas uiRoot;
 		public RectTransform dialogue, bartending;
 		public IEnumerable<RectTransform> views =>
 			new RectTransform[] { dialogue, bartending };
@@ -14,6 +15,10 @@ namespace Game {
 		public void SwitchTo(RectTransform view) {
 			Deactivate();
 			view?.gameObject?.SetActive(true);
+		}
+
+		void Awake() {
+			uiRoot.gameObject.SetActive(true);
 		}
 	}
 }

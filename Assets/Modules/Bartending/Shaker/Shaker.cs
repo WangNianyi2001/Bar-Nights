@@ -28,18 +28,6 @@ namespace Game {
 		public void ReceiveLiquid(Bottle bottle) {
 			Mix += bottle.alcohol.vector * liquidReceivingRate;
 		}
-
-		public void Serve() {
-			GameManager.instance.SwitchToDialogue();
-
-			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
-			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
-
-			DialogueSystemController dialogue = GameManager.instance.dialogue;
-			dialogue.StopAllConversations();
-			string conversationName = DialogueLua.GetVariable("Current Conversation").asString;
-			dialogue.StartConversation(conversationName);
-		}
 		#endregion
 	}
 }
