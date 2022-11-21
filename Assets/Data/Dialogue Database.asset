@@ -2349,7 +2349,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 0
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -2708,8 +2708,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 367.7152, y: 295.08722}
-    canvasZoom: 0.48000023
+    canvasScrollPosition: {x: 587.6055, y: 1156.2313}
+    canvasZoom: 0.87000006
   syncInfo:
     syncActors: 0
     syncItems: 0
