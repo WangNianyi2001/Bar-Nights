@@ -271,9 +271,9 @@ MonoBehaviour:
     onUse:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2112187447909191067}
-          m_TargetAssemblyTypeName: Game.Shaker, Assembly-CSharp
-          m_MethodName: Serve
+        - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+          m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+          m_MethodName: ServeBartendedAlchohol
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
