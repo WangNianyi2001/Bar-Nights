@@ -6,6 +6,7 @@ namespace Game {
 		public Shaker shaker;
 		public Collider bartendingPlane;
 		public RectTransform mixPivot;
+		public RectTransform mixTarget;
 
 		public float bottleAngle;
 		#endregion
@@ -32,6 +33,10 @@ namespace Game {
 					bottle.usable.enabled = value;
 				shaker.usable.enabled = value;
 			}
+		}
+
+		public void StartBartending(Vector2 target) {
+			mixTarget.anchoredPosition = target * (mixTarget.parent as RectTransform).sizeDelta / 2;
 		}
 		#endregion
 	}
