@@ -75,7 +75,7 @@ namespace Game {
 		}
 		#endregion
 
-		#region Dialogue management
+		#region Dialogue
 		public void StartDialogue(string name) {
 			dialogue.StopAllConversations();
 			SwitchToDialogue();
@@ -90,6 +90,10 @@ namespace Game {
 		public void SetCurrentCustomerAppearance(Sprite sprite) {
 			customer.Current?.SetAppearance(sprite);
 		}
+		#endregion
+
+		#region Customer
+		public void SpawnCustomerEnteringToBar(Customer data) => customer.SpawnCustomerEnteringToBar(data);
 		#endregion
 		#endregion
 

@@ -56,11 +56,5 @@ namespace Game {
 		}
 		#endregion
 		#endregion
-
-		#region Life cycle
-		void Start() {
-			//
-		}
-		#endregion
 	}
 }
