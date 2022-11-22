@@ -14,6 +14,7 @@ namespace Game {
 		#endregion
 
 		#region Inspector fields
+		public Act act;
 		new public Camera camera;
 		public InputActionAsset actions;
 		#endregion
@@ -23,14 +24,14 @@ namespace Game {
 		[NonSerialized] public BartendingManager bartending;
 		[NonSerialized] public DialogueSystemController dialogue;
 		[NonSerialized] public UIManager ui;
-		CustomerBehaviour currentCustomer;
+		[NonSerialized] public CustomerManager customer;
 		#endregion
 
-		#region Public interfaces
+		#region Auxiliary
 		#region State management
 		public void DeactivateAll() {
 			bartending.Active = false;
-			CustomerBehaviour.AllEnabled = false;
+			customer.AllEnabled = false;
 			ui.Deactivate();
 			view.Deactivate();
 		}
@@ -38,7 +39,7 @@ namespace Game {
 			DeactivateAll();
 			view.SwitchTo(view.dialogue);
 			ui.SwitchTo(ui.dialogue);
-			CustomerBehaviour.AllEnabled = true;
+			customer.AllEnabled = true;
 		}
 		public void SwitchToBartending() {
 			DeactivateAll();
@@ -55,7 +56,9 @@ namespace Game {
 			view.SwitchTo(view.entering);
 		}
 		#endregion
+		#endregion
 
+		#region Public interfaces
 		#region In-dialogue bartending
 		public void StartBartendingFromDialogue() {
 			dialogue.StopAllConversations();
@@ -73,12 +76,6 @@ namespace Game {
 		#endregion
 
 		#region Dialogue management
-		public CustomerBehaviour CurrentCustomer {
-			get => currentCustomer;
-			set {
-				currentCustomer = value;
-			}
-		}
 		public void StartDialogue(string name) {
 			dialogue.StopAllConversations();
 			SwitchToDialogue();
@@ -86,12 +83,12 @@ namespace Game {
 		}
 		public void EndDialogue() {
 			dialogue.StopAllConversations();
-			CurrentCustomer = null;
+			customer.Current = null;
 			DialogueLua.SetVariable("Bartending Count", 0);
 			DialogueLua.SetVariable("Current Dialogue", "");
 		}
 		public void SetCurrentCustomerAppearance(Sprite sprite) {
-			CurrentCustomer?.SetAppearance(sprite);
+			customer.Current?.SetAppearance(sprite);
 		}
 		#endregion
 		#endregion
@@ -102,11 +99,13 @@ namespace Game {
 			bartending = GetComponent<BartendingManager>();
 			dialogue = GetComponent<DialogueSystemController>();
 			ui = GetComponent<UIManager>();
+			customer = GetComponent<CustomerManager>();
 		}
 
 		void Start() {
 			InputDeviceManager.RegisterInputAction("Use", actions.FindAction("Use"));
 			DeactivateAll();
+			customer.SpawnCustomerEnteringToBar(act.openingCustomer);
 		}
 		#endregion
 	}

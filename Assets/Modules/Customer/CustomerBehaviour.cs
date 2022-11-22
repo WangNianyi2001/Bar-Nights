@@ -1,32 +1,20 @@
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
-using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Game {
-	[ExecuteInEditMode]
 	public class CustomerBehaviour : MonoBehaviour {
-		#region Static
-		[NonSerialized] public static List<CustomerBehaviour> all = new List<CustomerBehaviour>();
-		static bool allEnabled = true;
-		public static bool AllEnabled {
-			get => allEnabled;
-			set {
-				allEnabled = value;
-				foreach(var c in all)
-					c.usable.enabled = allEnabled;
-			}
-		}
-		#endregion
-
 		#region Inspector fields
-		public Customer customer;
 		public SpriteRenderer spriteRenderer;
 		public Usable usable;
+		public Animator animator;
+		public Transform headPos;
 		#endregion
 
 		#region Core fields
 		IEnumerator<string> nextDialogue;
+		Customer customer;
 		#endregion
 
 		#region Public interfaces
@@ -35,14 +23,21 @@ namespace Game {
 			set => usable.enabled = value;
 		}
 
+		public Customer Customer {
+			get => customer;
+			set {
+				customer = value;
+				nextDialogue = customer.dialogues.GetEnumerator();
+				SetAppearance(customer.sprite);
+			}
+		}
 		public void StartNextDialogue() {
 			if(!nextDialogue.MoveNext())
 				return;
 			GameManager game = GameManager.instance;
-			game.CurrentCustomer = this;
+			game.customer.Current = this;
 			game.StartDialogue(nextDialogue.Current);
 		}
-
 		public void SetAppearance(Sprite sprite) {
 			spriteRenderer.sprite = sprite;
 			BoxCollider collider = spriteRenderer.GetComponent<BoxCollider>();
@@ -51,29 +46,20 @@ namespace Game {
 				collider.size = spriteRenderer.localBounds.size;
 			}
 		}
+
+		#region Animation
+		public void PlayAnimation(string name) => animator.Play(name, -1, 0);
+		[ContextMenu("EnterToBar")]
+		public void EnterToBar() {
+			PlayAnimation("EnterToBar");
+			GameManager.instance.customer.Current = this;
+		}
+		#endregion
 		#endregion
 
 		#region Life cycle
 		void Start() {
-			if(!Application.isPlaying)
-				return;
-			all.Add(this);
-			Enabled = AllEnabled;
-			nextDialogue = customer.dialogues.GetEnumerator();
-			SetAppearance(customer.sprite);
-		}
-
-		void Update() {
-			if(!Application.isPlaying) {
-				SetAppearance(customer?.sprite);
-				return;
-			}
-		}
-
-		void OnDestroy() {
-			if(!Application.isPlaying)
-				return;
-			all.Remove(this);
+			//
 		}
 		#endregion
 	}
