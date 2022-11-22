@@ -1,20 +1,30 @@
 using UnityEngine;
+using UnityEngine.AI;
 using PixelCrushers.DialogueSystem;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Game {
 	public class CustomerBehaviour : MonoBehaviour {
 		#region Inspector fields
 		public SpriteRenderer spriteRenderer;
 		public Usable usable;
-		public Animator animator;
-		public Transform headPos;
+		public Transform head;
+		public NavMeshAgent agent;
 		#endregion
 
 		#region Core fields
 		IEnumerator<string> nextDialogue;
 		Customer customer;
+		#endregion
+
+		#region Auxiliary
+		IEnumerator StartDialogueWhenArrivingBar() {
+			SetAsCurrent();
+			yield return new WaitForSeconds(.5f);
+			yield return new WaitUntil(() => agent.remainingDistance < .5f);
+			StartNextDialogue();
+		}
 		#endregion
 
 		#region Public interfaces
@@ -46,15 +56,13 @@ namespace Game {
 				collider.size = spriteRenderer.localBounds.size;
 			}
 		}
+		public void SetAsCurrent() => GameManager.instance.customer.Current = this;
 
-		#region Animation
-		public void PlayAnimation(string name) => animator.Play(name, -1, 0);
-		[ContextMenu("EnterToBar")]
-		public void EnterToBar() {
-			PlayAnimation("EnterToBar");
-			GameManager.instance.customer.Current = this;
+		public void GoTo(Transform destination) => agent.destination = destination.position;
+		public void GoToBar() {
+			GoTo(GameManager.instance.anchors.bar);
+			StartCoroutine(StartDialogueWhenArrivingBar());
 		}
-		#endregion
 		#endregion
 	}
 }

@@ -25,6 +25,7 @@ namespace Game {
 		[NonSerialized] public DialogueSystemController dialogue;
 		[NonSerialized] public UIManager ui;
 		[NonSerialized] public CustomerManager customer;
+		[NonSerialized] public AnchorManager anchors;
 		#endregion
 
 		#region Auxiliary
@@ -104,6 +105,7 @@ namespace Game {
 			dialogue = GetComponent<DialogueSystemController>();
 			ui = GetComponent<UIManager>();
 			customer = GetComponent<CustomerManager>();
+			anchors = GetComponent<AnchorManager>();
 		}
 
 		void Start() {

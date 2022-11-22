@@ -22,7 +22,7 @@ namespace Game {
 
 		#region Auxiliary
 		public CustomerBehaviour SpawnCustomer(Customer customer) {
-			GameObject go = Instantiate(customerPrefab);
+			GameObject go = Instantiate(customerPrefab, GameManager.instance.anchors.entrance);
 			CustomerBehaviour cb = go.GetComponentInChildren<CustomerBehaviour>(true);
 			all.Add(cb);
 			cb.Customer = customer;
@@ -36,13 +36,13 @@ namespace Game {
 			get => current;
 			set {
 				current = value;
-				GameManager.instance.view.entering.LookAt = current.headPos;
+				GameManager.instance.view.entering.LookAt = current.head;
 			}
 		}
 
 		public void SpawnCustomerEnteringToBar(Customer data) {
 			var customer = SpawnCustomer(data);
-			customer.EnterToBar();
+			customer.GoToBar();
 			current = customer;
 			GameManager.instance.SwitchToEntering();
 		}
