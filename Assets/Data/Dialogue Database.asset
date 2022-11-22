@@ -2147,7 +2147,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 2
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -2318,13 +2318,13 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 0
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: StartBartendingFromDialogue
+            m_MethodName: EndDialogue
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -2336,8 +2336,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 1099.8989
-        y: 281.16815
+        x: 1101.7173
+        y: 284.80453
         width: 160
         height: 30
     - id: 40
@@ -2745,7 +2745,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.66999984
+    canvasZoom: 0.2799999
   - id: 2
     fields:
     - title: Title
@@ -2849,25 +2849,13 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 0
         destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 0
-        destinationConversationID: 2
-        destinationDialogueID: 20
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 0
-        destinationConversationID: 2
-        destinationDialogueID: 21
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 0
-        destinationConversationID: 2
         destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 0
+        destinationConversationID: 2
+        destinationDialogueID: 47
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3083,70 +3071,15 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 4
-        destinationConversationID: 2
-        destinationDialogueID: 5
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1103.1838
-        y: 221.72308
-        width: 160
-        height: 30
-    - id: 5
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\u6CA1\u6709\u676F\u5B50\u4E86\uFF0C\u53BB\u5361\u5EA7\u859B\u666F\u6C42\u90A3\u62FF\u676F\u5B50"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 1
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: SwitchToCustomer
+            m_MethodName: StartBartendingFromDialogue
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3159,7 +3092,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1103.1838
-        y: 271.72308
+        y: 221.72308
         width: 160
         height: 30
     - id: 6
@@ -3488,13 +3421,13 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 2
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: SwitchToBartending
+            m_MethodName: StartBartendingFromDialogue
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3879,7 +3812,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 3
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -3945,15 +3878,15 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Bartending_Count"] == 3
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1983.4686
-        y: 215.22641
+        x: 1986.5936
+        y: 265.2264
         width: 160
         height: 30
     - id: 20
@@ -4000,15 +3933,15 @@ MonoBehaviour:
         destinationDialogueID: 24
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Bartending_Count"] == 3
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2179.7092
-        y: 215.17519
+        x: 2182.8342
+        y: 265.17517
         width: 160
         height: 30
     - id: 21
@@ -4055,15 +3988,15 @@ MonoBehaviour:
         destinationDialogueID: 25
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Bartending_Count"] == 3
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 215.1752
+        x: 2385.9275
+        y: 265.1752
         width: 160
         height: 30
     - id: 22
@@ -4178,8 +4111,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1978.6788
-        y: 266.20605
+        x: 1981.8038
+        y: 316.20605
         width: 160
         height: 30
     - id: 24
@@ -4233,8 +4166,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2179.7092
-        y: 265.17517
+        x: 2182.8342
+        y: 315.17517
         width: 160
         height: 30
     - id: 25
@@ -4288,8 +4221,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 266.20612
+        x: 2385.9275
+        y: 316.20612
         width: 160
         height: 30
     - id: 26
@@ -4349,8 +4282,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2179.7092
-        y: 314.2318
+        x: 2182.8342
+        y: 364.2318
         width: 160
         height: 30
     - id: 27
@@ -4404,8 +4337,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 316.20612
+        x: 2385.9275
+        y: 366.20612
         width: 160
         height: 30
     - id: 28
@@ -4459,8 +4392,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1982.1824
-        y: 326.6625
+        x: 1985.3074
+        y: 376.6625
         width: 160
         height: 30
     - id: 29
@@ -4514,8 +4447,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1982.1824
-        y: 376.6625
+        x: 1985.3074
+        y: 426.6625
         width: 160
         height: 30
     - id: 30
@@ -4569,8 +4502,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1981.239
-        y: 428.5493
+        x: 1984.364
+        y: 478.5493
         width: 160
         height: 30
     - id: 31
@@ -4624,8 +4557,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2182.654
-        y: 375.7191
+        x: 2185.779
+        y: 425.7191
         width: 160
         height: 30
     - id: 32
@@ -4679,8 +4612,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2178.8806
-        y: 424.77567
+        x: 2182.0056
+        y: 474.77567
         width: 160
         height: 30
     - id: 33
@@ -4746,8 +4679,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 366.2061
+        x: 2385.9275
+        y: 416.2061
         width: 160
         height: 30
     - id: 34
@@ -4801,8 +4734,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 415.28867
+        x: 2385.9275
+        y: 465.28867
         width: 160
         height: 30
     - id: 35
@@ -4856,8 +4789,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 466.2061
+        x: 2385.9275
+        y: 516.20605
         width: 160
         height: 30
     - id: 36
@@ -4899,7 +4832,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 4
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -4917,8 +4850,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 2382.8025
-        y: 516.20605
+        x: 2385.9275
+        y: 566.20605
         width: 160
         height: 30
     - id: 37
@@ -5455,19 +5388,98 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 0
+      userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 2770.682
         y: 670.8666
         width: 160
         height: 30
+    - id: 47
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 47
+        destinationConversationID: 2
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 47
+        destinationConversationID: 2
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 47
+        destinationConversationID: 2
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Bartending_Count"] == 3
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2151.724
+        y: 188.12645
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 825.92944, y: 124.56967}
-    canvasZoom: 0.5500003
+    canvasScrollPosition: {x: 973.98895, y: 0}
+    canvasZoom: 0.46000037
   - id: 3
     fields:
     - title: Title
@@ -6009,7 +6021,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 1
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -6687,7 +6699,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 2
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -8068,7 +8080,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 3
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -8134,7 +8146,7 @@ MonoBehaviour:
         destinationDialogueID: 47
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["Bartending_Count"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8349,10 +8361,22 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 0;
+      userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 2306.1802
@@ -8360,8 +8384,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1047.6414, y: 578.26025}
-    canvasZoom: 0.4600004
+    canvasScrollPosition: {x: 2017.4922, y: 94.02991}
+    canvasZoom: 0.67000026
   - id: 4
     fields:
     - title: Title
@@ -10137,7 +10161,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 2
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -10253,7 +10277,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 3
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -12605,7 +12629,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 4
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -12776,10 +12800,22 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["Bartending_Count"] = 0
+      userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 2640.2617
@@ -12787,8 +12823,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1731.6216, y: 105.99683}
-    canvasZoom: 0.75999975
+    canvasScrollPosition: {x: 1404.0049, y: 14.705963}
+    canvasZoom: 0.33999985
   - id: 5
     fields:
     - title: Title
@@ -13590,7 +13626,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 519.41284
@@ -13598,8 +13646,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 27.901566, y: 424.2851}
-    canvasZoom: 1.0899999
+    canvasScrollPosition: {x: 94.48032, y: 0}
+    canvasZoom: 0.5800003
   syncInfo:
     syncActors: 0
     syncItems: 0
