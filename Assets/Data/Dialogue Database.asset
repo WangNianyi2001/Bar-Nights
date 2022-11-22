@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
+  m_Script: {fileID: 11500000, guid: f537516cb5d744448a3b37e9a472205f, type: 3}
   m_Name: Dialogue Database
   m_EditorClassIdentifier: 
   version: 
@@ -2689,7 +2689,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 530.5985, y: 412.97797}
+    canvasScrollPosition: {x: 537.7414, y: 344.4066}
     canvasZoom: 0.70000035
   - id: 2
     fields:
