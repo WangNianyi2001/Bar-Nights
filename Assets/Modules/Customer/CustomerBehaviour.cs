@@ -47,6 +47,7 @@ namespace Game {
 			GameManager game = GameManager.instance;
 			game.customer.Current = this;
 			game.StartDialogue(nextDialogue.Current);
+			GameManager.instance.customer.AllEnabled = false;
 		}
 		public void SetAppearance(Sprite sprite) {
 			spriteRenderer.sprite = sprite;
@@ -58,6 +59,7 @@ namespace Game {
 		}
 		public void SetAsCurrent() => GameManager.instance.customer.Current = this;
 
+		public void TeleportTo(Transform destination) => agent.nextPosition = destination.position;
 		public void GoTo(Transform destination) => agent.destination = destination.position;
 		public void GoToBar() {
 			GoTo(GameManager.instance.anchors.bar);

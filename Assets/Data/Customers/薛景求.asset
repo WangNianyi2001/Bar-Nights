@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568e93f80ecf32e46a7eb71500f38b19, type: 3}
-  m_Name: Sample Customer
+  m_Name: "\u859B\u666F\u6C42"
   m_EditorClassIdentifier: 
-  name: Sample Customer
-  sprite: {fileID: 21300000, guid: 4bac9e46f54790f4293e21d59ee05b41, type: 3}
-  dialogues:
-  - Conversation 1
+  name: "\u859B\u666F\u6C42"
+  sprite: {fileID: 21300000, guid: 458971d5fea59c04793bf09c3829b49b, type: 3}
+  dialogues: []

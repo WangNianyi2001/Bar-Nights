@@ -12,9 +12,12 @@ namespace Game {
 			foreach(var view in views)
 				view?.gameObject?.SetActive(false);
 		}
+		public void SwitchToNonExclusively(RectTransform view) {
+			view?.gameObject?.SetActive(true);
+		}
 		public void SwitchTo(RectTransform view) {
 			Deactivate();
-			view?.gameObject?.SetActive(true);
+			SwitchToNonExclusively(view);
 		}
 
 		void Awake() {

@@ -42,6 +42,7 @@ namespace Game {
 			ui.SwitchTo(ui.dialogue);
 			customer.AllEnabled = true;
 		}
+		public void SwitchToDialogueNonExclusively() => view.SwitchTo(view.dialogue);
 		public void SwitchToBartending() {
 			DeactivateAll();
 			view.SwitchTo(view.bartending);
@@ -94,7 +95,14 @@ namespace Game {
 		#endregion
 
 		#region Customer
-		public void SpawnCustomerEnteringToBar(Customer data) => customer.SpawnCustomerEnteringToBar(data);
+		public void SpawnMainCustomer(Customer data) => customer.SpawnMainCustomer(data);
+		public void SpawnSecondCustomer(Customer data) {
+			var cb = customer.SpawnCustomer(data);
+			cb.GoTo(anchors.secondBar);
+			view.entering.LookAt = cb.head;
+			view.SwitchTo(view.entering);
+		}
+		public void ViewMainCustomer() => view.entering.LookAt = customer.Current.head;
 		#endregion
 		#endregion
 
@@ -111,7 +119,7 @@ namespace Game {
 		void Start() {
 			InputDeviceManager.RegisterInputAction("Use", actions.FindAction("Use"));
 			DeactivateAll();
-			customer.SpawnCustomerEnteringToBar(act.openingCustomer);
+			customer.SpawnMainCustomer(act.openingCustomer);
 		}
 		#endregion
 	}

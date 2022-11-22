@@ -40,7 +40,7 @@ namespace Game {
 			}
 		}
 
-		public void SpawnCustomerEnteringToBar(Customer data) {
+		public void SpawnMainCustomer(Customer data) {
 			var customer = SpawnCustomer(data);
 			customer.GoToBar();
 			current = customer;

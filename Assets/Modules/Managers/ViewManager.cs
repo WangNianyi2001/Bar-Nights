@@ -13,9 +13,12 @@ public class ViewManager : MonoBehaviour {
 				view.enabled = false;
 		}
 	}
-	public void SwitchTo(CinemachineVirtualCamera view) {
-		Deactivate();
+	public void SwitchToNonExclusively(CinemachineVirtualCamera view) {
 		if(view)
 			view.enabled = true;
+	}
+	public void SwitchTo(CinemachineVirtualCamera view) {
+		Deactivate();
+		SwitchToNonExclusively(view);
 	}
 }
