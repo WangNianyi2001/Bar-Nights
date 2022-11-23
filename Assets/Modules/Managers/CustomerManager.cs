@@ -21,14 +21,18 @@ namespace Game {
 		#endregion
 
 		#region Auxiliary
-		public CustomerBehaviour SpawnCustomer(Customer customer) {
-			GameObject go = Instantiate(customerPrefab, GameManager.instance.anchors.entrance);
+		public CustomerBehaviour SpawnCustomerAt(Customer customer, Transform location) {
+			if(!location)
+				return null;
+			GameObject go = Instantiate(customerPrefab);
+			go.transform.position = location.position;
 			CustomerBehaviour cb = go.GetComponentInChildren<CustomerBehaviour>(true);
 			all.Add(cb);
 			cb.Customer = customer;
 			go.SetActive(true);
 			return cb;
 		}
+		public CustomerBehaviour SpawnCustomer(Customer customer) => SpawnCustomerAt(customer, GameManager.instance.anchors.entrance);
 		#endregion
 
 		#region Public interfaces
@@ -45,6 +49,10 @@ namespace Game {
 			customer.GoToBar();
 			current = customer;
 			GameManager.instance.SwitchToEntering();
+		}
+
+		public CustomerBehaviour Find(string name) {
+			return all.Find(x => x.Customer.name == name);
 		}
 		#endregion
 	}

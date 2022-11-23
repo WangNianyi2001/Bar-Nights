@@ -14,7 +14,6 @@ namespace Game {
 		#endregion
 
 		#region Core fields
-		IEnumerator<string> nextDialogue;
 		Customer customer;
 		#endregion
 
@@ -23,7 +22,7 @@ namespace Game {
 			SetAsCurrent();
 			yield return new WaitForSeconds(.5f);
 			yield return new WaitUntil(() => agent.remainingDistance < .5f);
-			StartNextDialogue();
+			StartDialogue();
 		}
 		#endregion
 
@@ -37,16 +36,15 @@ namespace Game {
 			get => customer;
 			set {
 				customer = value;
-				nextDialogue = customer.dialogues?.GetEnumerator();
 				SetAppearance(customer.sprite);
 			}
 		}
-		public void StartNextDialogue() {
-			if(nextDialogue == null || !nextDialogue.MoveNext())
-				return;
+		public void StartDialogue() {
 			GameManager game = GameManager.instance;
 			game.customer.Current = this;
-			game.StartDialogue(nextDialogue.Current);
+			string name = GameManager.instance.act.openingDialogue;
+			DialogueLua.SetVariable("Current Dialogue", name);
+			game.StartDialogue(name);
 			GameManager.instance.customer.AllEnabled = false;
 		}
 		public void SetAppearance(Sprite sprite) {

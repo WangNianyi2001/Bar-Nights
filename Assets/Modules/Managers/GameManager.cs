@@ -3,6 +3,8 @@ using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Game {
 	public class GameManager : MonoBehaviour {
@@ -109,6 +111,27 @@ namespace Game {
 			view.SwitchTo(view.entering);
 		}
 		public void ViewMainCustomer() => view.entering.LookAt = customer.Current.head;
+		public void GoToBarAsSecond(string customerName) {
+			customer.Find(customerName)?.GoTo(anchors.secondBar);
+		}
+		public void LeaveBar(string customerName) {
+			customer.Find(customerName)?.GoTo(anchors.entrance);
+		}
+		#endregion
+
+		#region Act
+		public void StartAct() {
+			customer.SpawnMainCustomer(act.openingCustomer);
+		}
+
+		public void EndAct() {
+			ui.SwitchTo(ui.end);
+			view.SwitchTo(view.dialogue);
+		}
+
+		public void QuitAct() {
+			SceneManager.LoadScene(ActLoader.loaderName);
+		}
 		#endregion
 		#endregion
 
@@ -120,12 +143,17 @@ namespace Game {
 			ui = GetComponent<UIManager>();
 			customer = GetComponent<CustomerManager>();
 			anchors = GetComponent<AnchorManager>();
+
+			act = ActLoader.actToLoad ?? act;
 		}
 
 		void Start() {
 			InputDeviceManager.RegisterInputAction("Use", actions.FindAction("Use"));
 			DeactivateAll();
-			customer.SpawnMainCustomer(act.openingCustomer);
+			foreach(var pair in act.spawnPairs)
+				customer.SpawnCustomerAt(pair.customer, GameObject.Find(pair.location)?.transform);
+			view.SwitchTo(view.customerArea);
+			ui.SwitchTo(ui.start);
 		}
 		#endregion
 	}

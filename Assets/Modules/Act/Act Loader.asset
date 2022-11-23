@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b98f4e1e89ccb042b4bf41200dff169, type: 3}
-  m_Name: Act 1
+  m_Script: {fileID: 11500000, guid: 4c6116a987b2e8548a2500b17a033ab5, type: 3}
+  m_Name: Act Loader
   m_EditorClassIdentifier: 
-  openingCustomer: {fileID: 11400000, guid: 13da21e4edf12aa44b3b6855b720501e, type: 2}
-  openingDialogue: Conversation 1

@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b98f4e1e89ccb042b4bf41200dff169, type: 3}
-  m_Name: Act 1
+  m_Name: Act 2
   m_EditorClassIdentifier: 
-  openingCustomer: {fileID: 11400000, guid: 13da21e4edf12aa44b3b6855b720501e, type: 2}
-  openingDialogue: Conversation 1
+  openingCustomer: {fileID: 11400000, guid: eaf17bba17518f7438a33ec98058d476, type: 2}
+  openingDialogue: Conversation 2
+  spawnPairs:
+  - customer: {fileID: 11400000, guid: 3a06590c090366e43bc8734896a61ed2, type: 2}
+    location: West Sofa
