@@ -69,8 +69,8 @@ namespace Game {
 		public void ServeBartendedAlchohol() {
 			SwitchToDialogue();
 
-			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
-			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
+			int count = DialogueLua.GetVariable("Bartending Count").asInt;
+			DialogueLua.SetVariable("Bartending Count", count + 1);
 
 			string name = DialogueLua.GetVariable("Current Dialogue").asString;
 			dialogue.StartConversation(name);

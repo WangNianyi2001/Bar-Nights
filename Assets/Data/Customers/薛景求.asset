@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: "\u859B\u666F\u6C42"
   m_EditorClassIdentifier: 
   name: "\u859B\u666F\u6C42"
-  sprite: {fileID: 21300000, guid: 458971d5fea59c04793bf09c3829b49b, type: 3}
+  sprite: {fileID: 21300000, guid: b2466a894f0ecc143a82f4e2d807c45f, type: 3}
   dialogues: []

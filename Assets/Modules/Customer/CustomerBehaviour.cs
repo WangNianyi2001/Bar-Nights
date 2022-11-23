@@ -37,12 +37,12 @@ namespace Game {
 			get => customer;
 			set {
 				customer = value;
-				nextDialogue = customer.dialogues.GetEnumerator();
+				nextDialogue = customer.dialogues?.GetEnumerator();
 				SetAppearance(customer.sprite);
 			}
 		}
 		public void StartNextDialogue() {
-			if(!nextDialogue.MoveNext())
+			if(nextDialogue == null || !nextDialogue.MoveNext())
 				return;
 			GameManager game = GameManager.instance;
 			game.customer.Current = this;

@@ -36,7 +36,7 @@ namespace Game {
 			get => current;
 			set {
 				current = value;
-				GameManager.instance.view.entering.LookAt = current.head;
+				GameManager.instance.view.entering.LookAt = current?.head;
 			}
 		}
 
