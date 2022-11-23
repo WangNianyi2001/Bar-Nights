@@ -280,6 +280,12 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 0
         destinationConversationID: 1
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
@@ -1319,7 +1325,7 @@ MonoBehaviour:
             m_MethodName: SpawnSecondCustomer
             m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: 24f91ae5ba473c94ca50e26530a482af, type: 2}
+              m_ObjectArgument: {fileID: 11400000, guid: 3a06590c090366e43bc8734896a61ed2, type: 2}
               m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
@@ -1395,7 +1401,7 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 874.4645
+        x: 877.74316
         y: 538.1598
         width: 160
         height: 30
@@ -1685,11 +1691,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1701,15 +1707,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u859B\u666F\u6C42\uFF1A *\u63A9\u9762\u6C89\u9ED8*"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1717,77 +1723,28 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 29
-        destinationConversationID: 1
-        destinationDialogueID: 30
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: StartBartendingFromDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 874.4645
         y: 853.264
-        width: 160
-        height: 30
-    - id: 30
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u5236\u4E00\u676F\u4E00\u683C\u5411\u4E0B\u7684\u9152\uFF0C\u7ED9\u859B\u666F\u6C42\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 30
-        destinationConversationID: 1
-        destinationDialogueID: 31
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 874.4645
-        y: 903.2641
         width: 160
         height: 30
     - id: 31
@@ -1834,15 +1791,15 @@ MonoBehaviour:
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["Bartending_Count"] == 2
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 874.4645
-        y: 951.7016
+        x: 1101.7366
+        y: 159.95415
         width: 160
         height: 30
     - id: 32
@@ -1896,8 +1853,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 874.4645
-        y: 1001.7017
+        x: 1099.4639
+        y: 209.95427
         width: 160
         height: 30
     - id: 33
@@ -1951,8 +1908,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 872.902
-        y: 1050.1393
+        x: 1097.9014
+        y: 258.3918
         width: 160
         height: 30
     - id: 34
@@ -2006,8 +1963,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 874.16785
-        y: 1097.6078
+        x: 1099.1672
+        y: 305.86038
         width: 160
         height: 30
     - id: 35
@@ -2047,71 +2004,28 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 35
-        destinationConversationID: 1
-        destinationDialogueID: 36
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 875.2667
-        y: 1145.41
-        width: 160
-        height: 30
-    - id: 36
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 4
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u73A9\u5BB6\u9700\u8981\u56DE\u6536\u859B\u666F\u6C42\u7684\u9152\u676F\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: StartBartendingFromDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 875.2667
-        y: 1195.41
+        x: 1100.2661
+        y: 353.66257
         width: 160
         height: 30
     - id: 37
@@ -2158,15 +2072,15 @@ MonoBehaviour:
         destinationDialogueID: 38
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Bartending_Count"] == 2
+      conditionsString: Variable["Bartending_Count"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1102.698
-        y: 107.60286
+        x: 1386.3043
+        y: 112.52089
         width: 160
         height: 30
     - id: 38
@@ -2220,69 +2134,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1099.6873
-        y: 160.89949
-        width: 160
-        height: 30
-    - id: 39
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u5236\u4E00\u676F\u4E09\u683C\u5411\u4E0B\u7684\u9152\uFF0C\u7ED9\u859B\u666F\u6C42\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
-            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      canvasRect:
-        serializedVersion: 2
-        x: 1101.7173
-        y: 284.80453
+        x: 1383.2936
+        y: 167.45686
         width: 160
         height: 30
     - id: 40
@@ -2326,30 +2179,18 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 40
         destinationConversationID: 1
-        destinationDialogueID: 39
+        destinationDialogueID: 47
         isConnector: 0
         priority: 2
       conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
-            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1096.4364
-        y: 219.08815
+        x: 1380.0427
+        y: 225.64552
         width: 160
         height: 30
     - id: 41
@@ -2688,9 +2529,70 @@ MonoBehaviour:
         y: 486.88892
         width: 160
         height: 30
+    - id: 47
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      canvasRect:
+        serializedVersion: 2
+        x: 1380.0427
+        y: 275.6455
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 537.7414, y: 344.4066}
-    canvasZoom: 0.70000035
+    canvasScrollPosition: {x: 593.3752, y: 0}
+    canvasZoom: 0.5800004
   - id: 2
     fields:
     - title: Title
@@ -3246,7 +3148,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 9
         destinationConversationID: 2
-        destinationDialogueID: 10
+        destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3258,73 +3160,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1324.7687
         y: 445.93695
-        width: 160
-        height: 30
-    - id: 10
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "(\u62FF\u5B8C\u676F\u5B50\u56DE\u6765\u8C03\u4E00\u676F\u4E00\u4E2A\u5DE6\u7684\u7ED9\u95FA\u871C)"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 10
-        destinationConversationID: 2
-        destinationDialogueID: 11
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
-            m_TargetAssemblyTypeName: 
-            m_MethodName: 
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: 
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      canvasRect:
-        serializedVersion: 2
-        x: 1323.0295
-        y: 495.93695
         width: 160
         height: 30
     - id: 11
@@ -3385,7 +3220,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1323.0295
-        y: 546.72437
+        y: 502.04358
         width: 160
         height: 30
     - id: 12
@@ -3649,61 +3484,6 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 16
         destinationConversationID: 2
-        destinationDialogueID: 17
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1613.0536
-        y: 407.69226
-        width: 160
-        height: 30
-    - id: 17
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u4E00\u683C\u4E0B\uFF0C\u4E09\u4E2A\u53F3\uFF0C\u7ED9\u7533\u60E0\u7F8E\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 17
-        destinationConversationID: 2
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -3715,7 +3495,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1613.0536
-        y: 460.0545
+        y: 407.69226
         width: 160
         height: 30
     - id: 18
@@ -3775,8 +3555,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 1613.0536
-        y: 507.69226
+        x: 1615.1813
+        y: 456.62842
         width: 160
         height: 30
     - id: 19
@@ -3996,7 +3776,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2770.934
-        y: 170.86653
+        y: 167.74153
         width: 160
         height: 30
     - id: 23
@@ -5331,24 +5111,18 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 46
+        destinationConversationID: 2
+        destinationDialogueID: 48
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
-            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 2770.682
@@ -5422,9 +5196,70 @@ MonoBehaviour:
         y: 188.12645
         width: 160
         height: 30
+    - id: 48
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: EndDialogue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      canvasRect:
+        serializedVersion: 2
+        x: 2770.682
+        y: 720.8666
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1610.2039, y: 294.26556}
-    canvasZoom: 1.2399999
+    canvasScrollPosition: {x: 894.2698, y: 0}
+    canvasZoom: 0.6400004
   - id: 3
     fields:
     - title: Title
@@ -5858,7 +5693,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 6
         destinationConversationID: 3
-        destinationDialogueID: 7
+        destinationDialogueID: 8
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5870,61 +5705,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1426.1027
         y: 272.23126
-        width: 160
-        height: 30
-    - id: 7
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E00\u676F\u4E00\u683C\u53F3\u4E24\u4E2A\u5DE6\u65CB\u7684\u7ED9\u6210\u529F\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 7
-        destinationConversationID: 3
-        destinationDialogueID: 8
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1424.2844
-        y: 322.23126
         width: 160
         height: 30
     - id: 8
@@ -5985,7 +5765,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1424.2844
-        y: 372.23126
+        y: 327.45517
         width: 160
         height: 30
     - id: 9
@@ -6536,7 +6316,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 18
         destinationConversationID: 3
-        destinationDialogueID: 19
+        destinationDialogueID: 20
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -6548,61 +6328,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1754.8204
         y: 536.5516
-        width: 160
-        height: 30
-    - id: 19
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E00\u683C\u5DE6\u4E24\u4E2A\u53F3\u65CB\u7684\u7ED9\u95FA\u871C\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 19
-        destinationConversationID: 3
-        destinationDialogueID: 20
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1756.4597
-        y: 583.5965
         width: 160
         height: 30
     - id: 20
@@ -6662,8 +6387,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 1756.4597
-        y: 633.5965
+        x: 1753.4747
+        y: 584.3428
         width: 160
         height: 30
     - id: 21
@@ -7917,61 +7642,6 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 43
         destinationConversationID: 3
-        destinationDialogueID: 44
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2008.9812
-        y: 1230.9362
-        width: 160
-        height: 30
-    - id: 44
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E00\u676F\u4E24\u683C\u53F3\u65CB\u7684\u7ED9\u6210\u529F\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 44
-        destinationConversationID: 3
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -7983,7 +7653,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2008.9812
-        y: 1280.9362
+        y: 1230.9362
         width: 160
         height: 30
     - id: 45
@@ -8043,8 +7713,8 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 2007.7156
-        y: 1330.9362
+        x: 2009.208
+        y: 1277.2048
         width: 160
         height: 30
     - id: 46
@@ -8304,6 +7974,61 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 50
+        destinationConversationID: 3
+        destinationDialogueID: 51
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2306.1802
+        y: 285.178
+        width: 160
+        height: 30
+    - id: 51
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
       userScript: 
@@ -8325,11 +8050,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2306.1802
-        y: 285.178
+        y: 335.178
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2017.4922, y: 94.02991}
+    canvasScrollPosition: {x: 1789.1342, y: 0}
     canvasZoom: 0.67000026
   - id: 4
     fields:
@@ -8502,7 +8227,31 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SpawnSecondCustomer
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 13da21e4edf12aa44b3b6855b720501e, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SwitchToDialogueNonExclusively
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 1402.6742
@@ -8605,7 +8354,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 3
         destinationConversationID: 4
-        destinationDialogueID: 31
+        destinationDialogueID: 32
         isConnector: 0
         priority: 2
       conditionsString: Variable["Bartending_Count"] == 2
@@ -9155,7 +8904,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 13
         destinationConversationID: 4
-        destinationDialogueID: 14
+        destinationDialogueID: 15
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -9167,61 +8916,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1407.3253
         y: 578.36255
-        width: 160
-        height: 30
-    - id: 14
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E00\u676F\u4E00\u683C\u4E0A\u7684\u7ED9\u94C1\u5B50\u5F1F\u5F1F\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 14
-        destinationConversationID: 4
-        destinationDialogueID: 15
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1410.3104
-        y: 623.88495
         width: 160
         height: 30
     - id: 15
@@ -9776,11 +9470,23 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: SwitchToEntering
-            m_Mode: 1
+            m_MethodName: SpawnSecondCustomer
+            m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_ObjectArgument: {fileID: 11400000, guid: eaf17bba17518f7438a33ec98058d476, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SpawnSecondCustomer
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 144776badfc0d9348b51608f0991c94d, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -9789,7 +9495,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1672.6151
-        y: 637.4912
+        y: 635.9287
         width: 160
         height: 30
     - id: 25
@@ -9840,7 +9546,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SwitchToDialogueNonExclusively
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 1665.1525
@@ -9998,7 +9716,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 28
         destinationConversationID: 4
-        destinationDialogueID: 29
+        destinationDialogueID: 30
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -10010,61 +9728,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1675.6002
         y: 837.4912
-        width: 160
-        height: 30
-    - id: 29
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E00\u676F\u4E00\u683C\u4E0A\u4E00\u683C\u53F3\u7684\u7ED9\u95FA\u871C\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 29
-        destinationConversationID: 4
-        destinationDialogueID: 30
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1678.0393
-        y: 887.4912
         width: 160
         height: 30
     - id: 30
@@ -10126,61 +9789,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1674.3807
         y: 936.2717
-        width: 160
-        height: 30
-    - id: 31
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\uFF08\u8C03\u4E09\u683C\u4E0A\u7684\u7ED9\u859B\u666F\u6C42\uFF09"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 31
-        destinationConversationID: 4
-        destinationDialogueID: 32
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1879.4181
-        y: 233.01364
         width: 160
         height: 30
     - id: 32
@@ -10955,8 +10563,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2096.1968
-        y: 822.624
+        x: 2088.302
+        y: 835.7819
         width: 160
         height: 30
     - id: 46
@@ -11010,8 +10618,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2097.8362
-        y: 877.62683
+        x: 2089.9414
+        y: 890.7847
         width: 160
         height: 30
     - id: 47
@@ -11065,8 +10673,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2103.9695
-        y: 932.88416
+        x: 2096.0747
+        y: 946.04205
         width: 160
         height: 30
     - id: 48
@@ -11120,8 +10728,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2097.8362
-        y: 976.19824
+        x: 2089.9414
+        y: 989.35614
         width: 160
         height: 30
     - id: 49
@@ -11175,11 +10783,11 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: SwitchToEntering
-            m_Mode: 1
+            m_MethodName: SpawnSecondCustomer
+            m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_ObjectArgument: {fileID: 11400000, guid: 90441aa159f264e428f5baad301160d3, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -11239,7 +10847,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SwitchToDialogueNonExclusively
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 2355.8762
@@ -12466,7 +12086,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 72
         destinationConversationID: 4
-        destinationDialogueID: 73
+        destinationDialogueID: 74
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12478,61 +12098,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 2355.8228
         y: 1328.2754
-        width: 160
-        height: 30
-    - id: 73
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "(\u8C03\u4E00\u676F\u56DB\u683C\u4E0A\u7684\u7ED9\u6210\u529F)"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 73
-        destinationConversationID: 4
-        destinationDialogueID: 74
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2356.6292
-        y: 1378.2754
         width: 160
         height: 30
     - id: 74
@@ -12768,8 +12333,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1862.2424, y: 122.53412}
-    canvasZoom: 0.9099998
+    canvasScrollPosition: {x: 1914.4509, y: 59.7623}
+    canvasZoom: 0.5200001
   - id: 5
     fields:
     - title: Title
@@ -12917,7 +12482,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+            m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+            m_MethodName: SpawnSecondCustomer
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 144776badfc0d9348b51608f0991c94d, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Game.Customer, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 519.41284
@@ -13591,8 +13168,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 330.2398, y: 45.23372}
-    canvasZoom: 0.8799999
+    canvasScrollPosition: {x: 223.48889, y: 15.985931}
+    canvasZoom: 0.78999996
   syncInfo:
     syncActors: 0
     syncItems: 0

@@ -47,7 +47,7 @@ namespace Game {
 			Using = false;
 			particle.startColor = alcohol.color;
 			particle.trigger.AddCollider(GameManager.instance.bartending.shaker.enteringPlane);
-			usable.name = alcohol.name;
+			usable.overrideName = alcohol.name;
 		}
 
 		void Update() {

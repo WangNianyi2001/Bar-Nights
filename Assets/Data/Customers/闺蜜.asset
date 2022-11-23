@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568e93f80ecf32e46a7eb71500f38b19, type: 3}
-  m_Name: "\u859B\u666F\u6C42"
+  m_Name: "\u95FA\u871C"
   m_EditorClassIdentifier: 
-  name: "\u859B\u666F\u6C42"
-  sprite: {fileID: 21300000, guid: b2466a894f0ecc143a82f4e2d807c45f, type: 3}
+  name: "\u95FA\u871C"
+  sprite: {fileID: 21300000, guid: db0d3822bda49fc40ba6942b1486cb93, type: 3}
   dialogues: []

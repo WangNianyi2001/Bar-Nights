@@ -64,13 +64,19 @@ namespace Game {
 		#region In-dialogue bartending
 		public void StartBartendingFromDialogue() {
 			dialogue.StopAllConversations();
+			bartending.StartBartending();
 			SwitchToBartending();
 		}
 		public void ServeBartendedAlchohol() {
+			if(!bartending.Reached) {
+				dialogue.ShowAlert("这不是顾客想要的酒", 2);
+				return;
+			}
+
 			SwitchToDialogue();
 
-			int bartenderCount = DialogueLua.GetVariable("Bartender Count").asInt;
-			DialogueLua.SetVariable("Bartending Count", bartenderCount + 1);
+			int count = DialogueLua.GetVariable("Bartending Count").asInt;
+			DialogueLua.SetVariable("Bartending Count", count + 1);
 
 			string name = DialogueLua.GetVariable("Current Dialogue").asString;
 			dialogue.StartConversation(name);

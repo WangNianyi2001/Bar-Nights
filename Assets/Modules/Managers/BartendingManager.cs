@@ -35,9 +35,16 @@ namespace Game {
 			}
 		}
 
-		public void StartBartending(Vector2 target) {
+		public void StartBartending() {
+			Vector2 target = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)).normalized;
+			if(target.magnitude < .2f)
+				target /= .5f;
+			target /= 1.5f;
 			mixTarget.anchoredPosition = target * (mixTarget.parent as RectTransform).sizeDelta / 2;
+			shaker.Mix = Vector2.zero;
 		}
+
+		public bool Reached => (mixTarget.anchoredPosition - mixPivot.anchoredPosition).magnitude < mixTarget.sizeDelta.magnitude / 2;
 		#endregion
 	}
 }
