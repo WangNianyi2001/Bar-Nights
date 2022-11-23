@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace Game {
 	public class UIManager : MonoBehaviour {
 		public Canvas uiRoot;
-		public RectTransform dialogue, bartending;
+		public RectTransform start, dialogue, bartending, end;
 		public IEnumerable<RectTransform> views =>
-			new RectTransform[] { dialogue, bartending };
+			new RectTransform[] { start, dialogue, bartending, end };
 
 		public void Deactivate() {
 			foreach(var view in views)

@@ -2574,7 +2574,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
+            m_MethodName: EndAct
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -2591,8 +2591,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 141.73007, y: 0}
-    canvasZoom: 0.7300003
+    canvasScrollPosition: {x: 775.40924, y: 49.180267}
+    canvasZoom: 0.61000043
   - id: 2
     fields:
     - title: Title
@@ -5188,11 +5188,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -5222,7 +5222,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
+            m_MethodName: EndAct
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -5239,7 +5239,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2219.1406, y: 178.12482}
+    canvasScrollPosition: {x: 2206.6406, y: 482.81198}
     canvasZoom: 0.6400007
   - id: 3
     fields:
@@ -7929,11 +7929,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -7963,7 +7963,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
+            m_MethodName: EndAct
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -12144,7 +12144,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
+            m_MethodName: EndAct
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -12161,8 +12161,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1110.311, y: 132.64299}
-    canvasZoom: 0.9999996
+    canvasScrollPosition: {x: 2149.9395, y: 267.4891}
+    canvasZoom: 0.66999984
   - id: 5
     fields:
     - title: Title
@@ -13000,11 +13000,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13034,7 +13034,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
             m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
-            m_MethodName: EndDialogue
+            m_MethodName: EndAct
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -13050,8 +13050,16 @@ MonoBehaviour:
         y: 756.73395
         width: 160
         height: 30
-    entryGroups: []
-    canvasScrollPosition: {x: 191.22177, y: 549.9359}
+    entryGroups:
+    - name: Group
+      rect:
+        serializedVersion: 2
+        x: 918.4946
+        y: 745.3905
+        width: 1
+        height: 1
+      color: {r: 1, g: 1, b: 1, a: 0.5}
+    canvasScrollPosition: {x: 346.90366, y: 464.70868}
     canvasZoom: 0.8799998
   syncInfo:
     syncActors: 0

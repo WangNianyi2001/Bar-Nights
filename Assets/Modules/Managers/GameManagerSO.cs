@@ -33,5 +33,11 @@ namespace Game {
 		public void GoToBarAsSecond(string customerName) => game.GoToBarAsSecond(customerName);
 		public void LeaveBar(string customerName) => game.LeaveBar(customerName);
 		#endregion
+
+		#region Act
+		public void StartAct() => game.StartAct();
+		public void EndAct() => game.EndAct();
+		public void QuitAct() => game.QuitAct();
+		#endregion
 	}
 }
