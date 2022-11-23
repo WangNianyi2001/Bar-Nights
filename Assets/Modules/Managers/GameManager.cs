@@ -4,6 +4,7 @@ using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Game {
 	public class GameManager : MonoBehaviour {
@@ -129,8 +130,7 @@ namespace Game {
 		}
 
 		public void QuitAct() {
-			// TODO
-			Application.Quit();
+			SceneManager.LoadScene(ActLoader.loaderName);
 		}
 		#endregion
 		#endregion
@@ -143,6 +143,8 @@ namespace Game {
 			ui = GetComponent<UIManager>();
 			customer = GetComponent<CustomerManager>();
 			anchors = GetComponent<AnchorManager>();
+
+			act = ActLoader.actToLoad ?? act;
 		}
 
 		void Start() {
