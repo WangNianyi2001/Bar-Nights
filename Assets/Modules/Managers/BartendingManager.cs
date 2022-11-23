@@ -15,6 +15,10 @@ namespace Game {
 		Vector3 lastPointingPosition = Vector3.zero;
 		#endregion
 
+		#region Auxiliary
+		float Rand() => Random.value * 2 - 1;
+		#endregion
+
 		#region Public interfaces
 		public Vector3 PointingPosition {
 			get {
@@ -36,7 +40,7 @@ namespace Game {
 		}
 
 		public void StartBartending() {
-			Vector2 target = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)).normalized;
+			Vector2 target = new Vector2(Rand(), Rand()).normalized;
 			if(target.magnitude < .2f)
 				target /= .5f;
 			target /= 1.5f;

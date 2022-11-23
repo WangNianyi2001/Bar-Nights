@@ -30,6 +30,8 @@ namespace Game {
 		public void SpawnMainCustomer(Customer data) => game.SpawnMainCustomer(data);
 		public void SpawnSecondCustomer(Customer data) => game.SpawnSecondCustomer(data);
 		public void ViewMainCustomer() => game.ViewMainCustomer();
+		public void GoToBarAsSecond(string customerName) => game.GoToBarAsSecond(customerName);
+		public void LeaveBar(string customerName) => game.LeaveBar(customerName);
 		#endregion
 	}
 }

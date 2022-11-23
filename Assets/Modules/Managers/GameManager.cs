@@ -109,6 +109,12 @@ namespace Game {
 			view.SwitchTo(view.entering);
 		}
 		public void ViewMainCustomer() => view.entering.LookAt = customer.Current.head;
+		public void GoToBarAsSecond(string customerName) {
+			customer.Find(customerName)?.GoTo(anchors.secondBar);
+		}
+		public void LeaveBar(string customerName) {
+			customer.Find(customerName)?.GoTo(anchors.entrance);
+		}
 		#endregion
 		#endregion
 
@@ -126,6 +132,8 @@ namespace Game {
 			InputDeviceManager.RegisterInputAction("Use", actions.FindAction("Use"));
 			DeactivateAll();
 			customer.SpawnMainCustomer(act.openingCustomer);
+			foreach(var pair in act.spawnPairs)
+				customer.SpawnCustomerAt(pair.customer, GameObject.Find(pair.location)?.transform);
 		}
 		#endregion
 	}
