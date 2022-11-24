@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingCustomer: {fileID: 11400000, guid: eaf17bba17518f7438a33ec98058d476, type: 2}
   openingDialogue: Conversation 2
+  bgm: {fileID: 8300000, guid: 9edf55c444914424db46a7ca1573e829, type: 3}
   spawnPairs:
   - customer: {fileID: 11400000, guid: 3a06590c090366e43bc8734896a61ed2, type: 2}
     location: West Sofa

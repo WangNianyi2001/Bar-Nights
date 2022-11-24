@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 namespace Game {
 	[CreateAssetMenu(menuName = "Game/GameManager")]
@@ -38,6 +37,10 @@ namespace Game {
 		public void StartAct() => game.StartAct();
 		public void EndAct() => game.EndAct();
 		public void QuitAct() => game.QuitAct();
+		#endregion
+
+		#region Audio
+		public void PlayAudioEffect(AudioClip audio) => FindObjectOfType<AudioManager>().PlayAudioEffect(audio);
 		#endregion
 	}
 }

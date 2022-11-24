@@ -7,6 +7,7 @@ namespace Game {
 	public class Act : ScriptableObject {
 		public Customer openingCustomer;
 		public string openingDialogue;
+		public AudioClip bgm;
 
 		[Serializable] public struct SpawnPair {
 			public Customer customer;

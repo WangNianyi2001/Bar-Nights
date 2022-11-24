@@ -3,7 +3,6 @@ using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
 using System;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 namespace Game {
@@ -28,6 +27,7 @@ namespace Game {
 		[NonSerialized] public UIManager ui;
 		[NonSerialized] public CustomerManager customer;
 		[NonSerialized] public AnchorManager anchors;
+		[NonSerialized] public new AudioManager audio;
 		#endregion
 
 		#region Auxiliary
@@ -143,6 +143,7 @@ namespace Game {
 			ui = GetComponent<UIManager>();
 			customer = GetComponent<CustomerManager>();
 			anchors = GetComponent<AnchorManager>();
+			audio = GetComponent<AudioManager>();
 
 			act = ActLoader.actToLoad ?? act;
 		}
