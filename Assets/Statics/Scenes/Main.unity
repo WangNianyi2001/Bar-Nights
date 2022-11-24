@@ -2137,7 +2137,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9b026dc8825a8a74b970774278a09284, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -2800,6 +2800,10 @@ PrefabInstance:
     - target: {fileID: 1816574358993592006, guid: ccf546be92b5f174bab97c8647003cf5, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904309001447985446, guid: ccf546be92b5f174bab97c8647003cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.101
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccf546be92b5f174bab97c8647003cf5, type: 3}

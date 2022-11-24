@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingCustomer: {fileID: 11400000, guid: 3a06590c090366e43bc8734896a61ed2, type: 2}
   openingDialogue: Conversation 4
-  bgm: {fileID: 8300000, guid: d60a022994d74404f9ac34b37450b5cf, type: 3}
+  bgm: {fileID: 8300000, guid: 9edf55c444914424db46a7ca1573e829, type: 3}
   spawnPairs: []
