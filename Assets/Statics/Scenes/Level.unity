@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 4d9637177cbd6604b9bb522205874cf7, type: 2}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.08780861
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8013682643302638150, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
       propertyPath: m_Name
       value: Act 5
@@ -362,6 +374,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: d2ddc27593c26f841972d2fb6caf9674, type: 2}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.34015658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34015658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.990566
+      objectReference: {fileID: 0}
     - target: {fileID: 8013682643302638150, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
       propertyPath: m_Name
       value: Act 3
@@ -540,6 +564,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 59c87fa03edfc8d41a64ddd9378addfe, type: 2}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.27945885
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.29894084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9433962
+      objectReference: {fileID: 0}
     - target: {fileID: 8013682643302638150, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
       propertyPath: m_Name
       value: Act 4
@@ -756,6 +792,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: c056984f9976fce40ab13ecf4c42fce8, type: 2}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.32451043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.53770167
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
     - target: {fileID: 8013682643302638150, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
       propertyPath: m_Name
       value: Act 2
@@ -855,6 +903,104 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8013682643302638151, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
   m_PrefabInstance: {fileID: 609287722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1027689176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027689180}
+  - component: {fileID: 1027689179}
+  - component: {fileID: 1027689178}
+  - component: {fileID: 1027689177}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1027689177
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027689176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1027689178
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027689176}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 94040738ec2a4884995e819d41228869, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1027689179
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027689176}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1027689180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027689176}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
+  m_LocalPosition: {x: 0.34, y: -2, z: 2.7220004}
+  m_LocalScale: {x: 2.3751, y: 1, z: 2.7895}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 90}
 --- !u!1 &1686724295
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +1030,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1049,6 +1195,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 8acdf22d0ce8a3745a4106863c26055a, type: 2}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.94267327
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013682643302638145, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8013682643302638150, guid: d762b2c4ae756fb47b5ecb907b22562d, type: 3}
       propertyPath: m_Name
       value: Act 1
