@@ -123,6 +123,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4448d53e0dc3a8140b080d385cc90d0c, type: 2}
+        m_TargetAssemblyTypeName: Game.GameManagerSO, Assembly-CSharp
+        m_MethodName: PlayAudioEffect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 52c79d42c73fc30478eadfe440c7b6b0, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 9e55feb7fb7ecdd4091b5e15a018804f, type: 2}
         m_TargetAssemblyTypeName: Game.ActLoader, Assembly-CSharp
         m_MethodName: LoadAct
@@ -222,7 +234,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9b026dc8825a8a74b970774278a09284, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
